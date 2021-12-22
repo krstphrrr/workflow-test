@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  nextjs-ui:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
+    ports:
+      - 3000:3000
+    container_name: nextjs
+    # uncomment below for development 
+    # with nodemon 
+    volumes:
+      - ./app:/usr/src/app
+      - /app/.next
